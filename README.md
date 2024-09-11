@@ -3,7 +3,6 @@
 [![NPM version][npm-img]][npm]
 [![Node.js CI][ci-img]][ci]
 [![Coverage Status][coveralls-img]][coveralls]
-[![Snyk badge][snyk-img]][snyk]
 
 [npm-img]:         https://img.shields.io/npm/v/@tadashi/koa-router.svg
 [npm]:             https://www.npmjs.com/package/@tadashi/koa-router
@@ -11,8 +10,6 @@
 [ci]:              https://github.com/lagden/koa-router/actions/workflows/nodejs.yml
 [coveralls-img]:   https://coveralls.io/repos/github/lagden/koa-router/badge.svg?branch=main
 [coveralls]:       https://coveralls.io/github/lagden/koa-router?branch=main
-[snyk-img]:        https://snyk.io/test/github/lagden/koa-router/badge.svg
-[snyk]:            https://snyk.io/test/github/lagden/koa-router
 
 
 The simple and tiny route middleware for koa.
@@ -55,7 +52,7 @@ app
 //...
 ```
 
-> [!INFORMATION]  
+> [!TIP]  
 > It's possible to use `koa-compose` to group routes.  
 > See an example in [router.spec.js](https://github.com/lagden/koa-router/blob/main/test/router.spec.js#L26-L35).
 
