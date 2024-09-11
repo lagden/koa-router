@@ -42,10 +42,6 @@ function create(method, path, checkFn, routeFn) {
 			return next()
 		}
 
-		if (ctx.alreadyMatched) {
-			return next()
-		}
-
 		const { params } = matchPath
 		for (const k of Object.keys(params)) {
 			if (params?.[k]) {
@@ -53,9 +49,8 @@ function create(method, path, checkFn, routeFn) {
 			}
 		}
 
-		ctx.alreadyMatched = true
-		ctx.routePath = path
-		ctx.params = params
+		ctx.routePath = ctx.request.routePath = path
+		ctx.params = ctx.request.params = params
 
 		return routeFn(ctx, next)
 	}
@@ -86,14 +81,14 @@ function buid(method) {
 
 /**
  * @type {{
-*   [method: string]: (path: string, ...handlers: Middleware[]) => Middleware
-* } & {
-*   del: (path: string, ...handlers: Middleware[]) => Middleware,
-*   all: (path: string, ...handlers: Middleware[]) => Middleware
-* }}
-*/
+ *   [method: string]: (path: string, ...handlers: Middleware[]) => Middleware
+ * } & {
+ *   del: (path: string, ...handlers: Middleware[]) => Middleware,
+ *   all: (path: string, ...handlers: Middleware[]) => Middleware
+ * }}
+ */
 const router = {}
-const methods = http.METHODS?.map((method) => method.toLowerCase()) ?? []
+const methods = http.METHODS?.map((method) => method.toLowerCase())
 
 // Define the router methods for each HTTP method
 for (const method of methods) {
