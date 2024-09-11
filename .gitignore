@@ -1,0 +1,18 @@
+# Dir
+.vite
+coverage/**
+dist
+logs
+node_modules
+resource
+
+# File
+*-lock.*
+*.lock
+*.log
+*.log*
+.conf/local.sh
+.registry-*
+_cleanup
+_init
+vite.config.js.timestamp-*

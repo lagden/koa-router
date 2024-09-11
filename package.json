@@ -1,0 +1,63 @@
+{
+  "name": "@tadashi/koa-router",
+  "version": "1.0.0",
+  "description": "The simple and tiny route middleware for koa.",
+  "keywords": [
+    "koa",
+    "koajs",
+    "framework",
+    "router",
+    "middleware",
+    "lib",
+    "tadashi"
+  ],
+  "type": "module",
+  "main": "./src/router.js",
+  "types": "./types/router.d.ts",
+  "exports": {
+    ".": {
+      "import": "./src/router.js",
+      "types": "./types/router.d.ts"
+    }
+  },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "src",
+    "types"
+  ],
+  "author": "Thiago Lagden",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/lagden/koa-router.git"
+  },
+  "homepage": "https://github.com/lagden/koa-router#readme",
+  "bugs": {
+    "url": "https://github.com/lagden/koa-router/issues"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "tsc": "tsc",
+    "test": "c8 --reporter=text --reporter=text-summary --reporter=lcovonly node --test test/*.spec.js"
+  },
+  "dependencies": {
+    "koa-compose": "4.1.0",
+    "path-to-regexp": "8.1.0"
+  },
+  "peerDependencies": {
+    "koa": ">= 2 < 3"
+  },
+  "devDependencies": {
+    "@koa/bodyparser": "5.1.1",
+    "@tadashi/hex-id": "3.0.2",
+    "@types/node": "22.5.4",
+    "c8": "10.1.2",
+    "hash-to-port": "1.2.0",
+    "koa": "2.15.3",
+    "supertest": "7.0.0",
+    "typescript": "5.6.2"
+  }
+}
