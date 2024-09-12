@@ -25,10 +25,12 @@ test('get', async () => {
 	// prettier-ignore
 	const routes = [
 		router.get('/:product/:company/list', auth, middleware),
-		router.get('/:product/:company/:id/read', middleware),
 		router.all('/:product/:company/all', middleware),
-		router.get('/:product/:company', middleware),
-		router.get('/:product/:company/:unit', middleware),
+		router.get('/:product/:company/:id/read', middleware),
+		router.get([
+			'/:product/:company',
+			'/:product/:company/:unit',
+		], middleware),
 	]
 
 	const koa = new Koa()
@@ -37,10 +39,10 @@ test('get', async () => {
 	const { app, server } = start(koa)
 	const results = await Promise.all([
 		app.get('/iphone/apple/list'),
+		app.get('/iphone/apple/all'),
 		app.get('/iphone/apple/123/read'),
 		app.get('/iphone/apple'),
 		app.get('/iphone/apple/1'),
-		app.get('/iphone/apple/all'),
 	])
 
 	for (const response of results) {

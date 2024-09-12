@@ -1,6 +1,6 @@
 {
   "name": "@tadashi/koa-router",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "The simple and tiny route middleware for koa.",
   "keywords": [
     "koa",
@@ -54,6 +54,7 @@
     "@koa/bodyparser": "5.1.1",
     "@tadashi/hex-id": "3.0.2",
     "@types/node": "22.5.4",
+    "@types/koa": "2.15.0",
     "c8": "10.1.2",
     "hash-to-port": "1.2.0",
     "koa": "2.15.3",
