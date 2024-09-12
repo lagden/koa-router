@@ -54,7 +54,7 @@ app
 
 > [!TIP]  
 > It's possible to use [koa-compose](https://www.npmjs.com/package/koa-compose) to group routes.  
-> See an example in [router.spec.js](./test/router.spec.js#L26-L35).
+> See an example in [router.spec.js](./test/router.spec.js#L25-L37).
 
 ---
 
